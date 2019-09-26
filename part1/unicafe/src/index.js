@@ -7,6 +7,7 @@ const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>;
 
 const Statistic = ({ text, value }) => {
   return (
+    // return the values as a table row with two pieces of data
     <tr>
       <td>{text}</td>
       <td>{value}</td>
@@ -15,8 +16,10 @@ const Statistic = ({ text, value }) => {
 };
 
 const Statistics = ({ good, neutral, bad }) => {
+  // set a value for the overall total
   const total = good + neutral + bad;
 
+  // verify if any votes have been made
   if (total === 0) {
     return <div>No feedback given</div>;
   }

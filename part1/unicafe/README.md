@@ -1,3 +1,5 @@
+Live preview for this section: https://codesandbox.io/embed/fullstackopenpart1unicafe-g1mrk
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -29,6 +29,7 @@ const Part = props => {
   );
 };
 
+// adds the total number of exercises together
 const Total = props => {
   return (
     <>
