@@ -11,6 +11,7 @@ const App = () => {
     { name: "Mary Poppendieck", number: "39-23-6423122", id: 4 }
   ]);
   const [newFilter, setNewFilter] = useState("");
+  // Filter the persons array based on the value set in the filter input
   const filteredPersons = persons.filter(person =>
     person.name.toLowerCase().includes(newFilter.toLowerCase())
   );

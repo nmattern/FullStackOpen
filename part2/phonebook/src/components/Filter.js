@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Filter = ({ newFilter, setNewFilter }) => {
+  // Upate Input on text change
   const handleNameFilter = event => {
     setNewFilter(event.target.value);
   };
