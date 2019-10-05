@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import PersonForm from "./components/PersonForm";
 import PersonList from "./components/PersonList";
 import Filter from "./components/Filter";
 
 const App = () => {
-  const [persons, setPersons] = useState([
-    { name: "Arto Hellas", number: "040-123456", id: 1 },
-    { name: "Ada Lovelace", number: "39-44-5323523", id: 2 },
-    { name: "Dan Abramov", number: "12-43-234345", id: 3 },
-    { name: "Mary Poppendieck", number: "39-23-6423122", id: 4 }
-  ]);
+  const [persons, setPersons] = useState([]);
+  const hook = () => {
+    axios.get("http://localhost:3001/persons").then(response => {
+      setPersons(response.data);
+    });
+  };
+  useEffect(hook, []);
   const [newFilter, setNewFilter] = useState("");
   // Filter the persons array based on the value set in the filter input
   const filteredPersons = persons.filter(person =>
