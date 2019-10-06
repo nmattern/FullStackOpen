@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Langauges from "./Languages";
+import Country from "./Country";
 
 const Countries = ({ searchFilter }) => {
   const [countries, setCountries] = useState([]);
@@ -20,27 +20,9 @@ const Countries = ({ searchFilter }) => {
   if (countries.length > 10) {
     return <p>Too many matches, specify another filter</p>;
   } else if (countries.length > 1 && countries.length < 10) {
-    return countries.map(country => (
-      <p key={country.numericCode}>{country.name} </p>
-    ));
+    return countries.map((country, i) => <Country key={i} country={country} />);
   } else if (countries.length === 1) {
-    return (
-      <div>
-        <h2>{countries[0].name}</h2>
-        <p>capital {countries[0].capital}</p>
-        <p>population {countries[0].population}</p>
-        <h3>langauges</h3>
-        <ul>
-          <Langauges country={countries[0]} />
-        </ul>
-        <img
-          src={`${countries[0].flag}`}
-          alt={`flag of ${countries[0].name}`}
-          height="150"
-          width="150"
-        ></img>
-      </div>
-    );
+    return <Country country={countries[0]} />;
   } else {
     return null;
   }

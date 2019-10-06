@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Countries from "./components/Countries";
+import CountryList from "./components/CountryList";
 import CountrySearch from "./components/CountrySearch";
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
         searchFilter={searchFilter}
         setSearchFilter={setSearchFilter}
       />
-      <Countries searchFilter={searchFilter} />
+      <CountryList searchFilter={searchFilter} />
     </div>
   );
 };
